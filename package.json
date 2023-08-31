@@ -1,0 +1,44 @@
+{
+  "name": "incidents_pa49930u00",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "i": "^0.3.7",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.108.12"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-incidents_pa49930u00_ui": "cds watch --open incidents_pa49930u00_ui/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "dummy-auth"
+      },
+      "db": {
+        "[production]": {
+          "kind": "hana-cloud"
+        },
+        "[development]": {
+          "kind": "sql"
+        },
+        "model": [
+          "db",
+          "srv"
+        ]
+      }
+    }
+  }
+}
